@@ -41,33 +41,34 @@ const todoList = () => {
 
     const toDisplayableList = (list) => {
         // Format the To-Do list here, and return the output string as per the format given above.
+        let s = "";
         list.forEach(x => {
             if (x.dueDate === today) {
 
                 if (x.completed === true) {
-                    console.log("[x] " + x.title);
+                    s += ("[x] " + x.title + "\n");
                 }
                 else
-                    console.log("[ ] " + x.title);
+                    s += ("[ ] " + x.title + "\n");
             }
             if (x.dueDate === yesterday) {
 
                 if (x.completed === true) {
-                    console.log("[x] " + x.title + " " + x.dueDate);
+                    s += ("[x] " + x.title + " " + x.dueDate + "\n");
                 }
                 else
-                    console.log("[ ] " + x.title + " " + x.dueDate);
+                    s += ("[ ] " + x.title + " " + x.dueDate + "\n");
             }
             if (x.dueDate === tomorrow) {
 
                 if (x.completed === true) {
-                    console.log("[x] " + x.title + " " + x.dueDate);
+                    s += ("[x] " + x.title + " " + x.dueDate + "\n");
                 }
                 else
-                    console.log("[ ] " + x.title + " " + x.dueDate);
+                    s += ("[ ] " + x.title + " " + x.dueDate + "\n");
             }
-
         })
+        return s;
     }
 
     return { all, add, markAsComplete, overdue, dueToday, dueLater, toDisplayableList };
