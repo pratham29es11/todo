@@ -10,7 +10,7 @@ const todoList = () => {
     const overdue = () => {
         all.forEach(x => {
 
-            if (x.dueDate === yesterday && x.completed === false) {
+            if (x.dueDate === yesterday) {
                 over.push(x);
             }
         })
@@ -21,7 +21,7 @@ const todoList = () => {
         // Write the date check condition here and return the array of todo items that are due today accordingly.
         all.forEach(x => {
 
-            if (x.dueDate === today && x.completed === false) {
+            if (x.dueDate === today) {
                 due.push(x);
             }
         })
@@ -32,7 +32,7 @@ const todoList = () => {
         // Write the date check condition here and return the array of todo items that are due later accordingly.
         all.forEach(x => {
 
-            if (x.dueDate === tomorrow && x.completed === false) {
+            if (x.dueDate === tomorrow) {
                 late.push(x);
             }
         })
@@ -43,9 +43,30 @@ const todoList = () => {
         // Format the To-Do list here, and return the output string as per the format given above.
         list.forEach(x => {
             if (x.dueDate === today) {
-                delete x.dueDate;
+
+                if (x.completed === true) {
+                    console.log("[x] " + x.title);
+                }
+                else
+                    console.log("[ ] " + x.title);
             }
-            console.log(x);
+            if (x.dueDate === yesterday) {
+
+                if (x.completed === true) {
+                    console.log("[x] " + x.title + " " + x.dueDate);
+                }
+                else
+                    console.log("[ ] " + x.title + " " + x.dueDate);
+            }
+            if (x.dueDate === tomorrow) {
+
+                if (x.completed === true) {
+                    console.log("[x] " + x.title + " " + x.dueDate);
+                }
+                else
+                    console.log("[ ] " + x.title + " " + x.dueDate);
+            }
+
         })
     }
 
