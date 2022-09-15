@@ -49,7 +49,7 @@ const todoList = () => {
                     s += ("[x] " + x.title + "\n");
                 }
                 else
-                    s += ("[ ] " + x.title + "\n");
+                    s += ("[ ] " + x.title);
             }
             if (x.dueDate === yesterday) {
 
@@ -57,7 +57,7 @@ const todoList = () => {
                     s += ("[x] " + x.title + " " + x.dueDate + "\n");
                 }
                 else
-                    s += ("[ ] " + x.title + " " + x.dueDate + "\n");
+                    s += ("[ ] " + x.title + " " + x.dueDate);
             }
             if (x.dueDate === tomorrow) {
 
